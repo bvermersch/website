@@ -3,17 +3,17 @@
 <span class='article_sig'>Benoît Vermersch&mdash;2016</span>
 
 ##Model
-We are interested in the ground state properties of the long-range Ising model.
+We are interested in the ground state properties of the long-range Ising model
 \begin{equation}
-H = \sum_{i<j} \frac{J}{(j-i)^3} \sigma_i^x \sigma_j^x +\sum_i \Delta \sigma_i^z
+H = \sum_{i<j} \frac{J}{(j-i)^3} \sigma_i^x \sigma_j^x +\sum_i \Delta \sigma_i^z, 
 \end{equation}
+as realized for instance in trapped ion experiments.
 
 
-For $\Delta\to0$, the gap between ground and excited state tend to zero.
-Using the standard DMRG approach (without Quantum numbers), the ground state search thus becomes  more and more challenging as  $\Delta\to0$ where the algorithm has to resolve very small energy gaps.
-In particular, it becomes extremely hard to access accurately the ground state entropy as a small admixture of the 1st excited state leads to significant errors in the entropy estimation.
+Using the standard DMRG approach (without Quantum numbers), the ground state search thus becomes  more and more challenging as  $\Delta\to0$ because the energy gap vanishes.
+In particular, it becomes extremely challenging to calculate accurately the entropy of the ground state entropy, a small admixture of the first excited state in the estimated ground state leading to significant errors in the entropy.
 
-This problem can be cured based on the fact that the Hamiltonian conserves the parity of the number of excitations and that ground and first excited states have opposite parity 
+This problem can be cured using the fact that the Hamiltonian conserves the parity of the number of excitations and that ground and first excited states have opposite parity. 
 (For two particles, these state correspond respectively to $\ket{\uparrow}\ket{\uparrow}-\ket{\downarrow}\ket{\downarrow}$, $\ket{\uparrow}\ket{\downarrow}-\ket{\downarrow}\ket{\uparrow}$).
 Using a MPS ansatz with Quantum numbers associated to the parity conservation, the DMRG search will be thus in this case unaffected by the gap closing at $\Delta\to 0$.
 
@@ -32,7 +32,7 @@ To implement parity conservation with ITensor, we create a new spin set spinhalf
             }
       }
 
-and one can use the Quantum number version of the SxSx operator, given that it conserves the parity. This is done by commenting the line  "Op = mixedIQTensor(s,sP);" of the original spinhalf.h class.
+Given that the SxSx operator conserves the parity, we cam also comment the line  "Op = mixedIQTensor(s,sP);" of the original spinhalf.h class.
 
 
     if(opname == "Sx")
@@ -85,7 +85,7 @@ We finally use the dmrg algorithm to compare the efficiency of the parity non-co
         auto en1 = dmrg(psi1,H,w,sweeps,{"Quiet=",true,"Weight=",penalty});
 
         //Eigenstate search conserving QN MPO
-        InitState state(sites,"Up");  // Search in the even parity setor
+        InitState state(sites,"Up");  // Search in the even parity sector
         auto phi = IQMPS(state);
         auto enP = dmrg(phi,HQ,sweeps,{"Quiet=",true});
         state.set(1,"Dn");  // Search in the odd parity sector
