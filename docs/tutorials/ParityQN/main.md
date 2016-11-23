@@ -7,7 +7,7 @@ We are interested in the ground state properties of the long-range Ising model
 \begin{equation}
 H = \sum_{i<j} \frac{J}{(j-i)^3} \sigma_i^x \sigma_j^x +\sum_i \Delta \sigma_i^z, 
 \end{equation}
-as realized for instance in trapped ion experiments.
+as realized for instance in experiments with trapped ions.
 
 
 Using the standard DMRG approach (without Quantum numbers), the ground state search thus becomes  more and more challenging as  $\Delta\to0$ because the energy gap vanishes.
@@ -95,8 +95,8 @@ We finally use the dmrg algorithm to compare the efficiency of the parity non-co
      
  The gap and the fidelities as a function of the detuning $\Delta$  and for $N=40$ sites are represented in the Figure below showing the advantage of the Quantum number approach.
  
- <p align="center"><img src="gap.png" alt="Diagram" style="width: 10px;"/></p>
- <p align="center"><img src="entropy.png" alt="Diagram" style="width: 10px;"/></p>
+ <p align="center"><img src="gap.png" alt="Diagram" style="width: 5px;"/>
+ <img src="entropy.png" alt="Diagram" style="width: 5px;"/></p>
  
  
 <a href="parityQN.zip">Download the full codes and the python scripts used to create and plot the data</a>
