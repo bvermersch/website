@@ -10,12 +10,12 @@ H = \sum_{i<j} \frac{J}{(j-i)^3} \sigma_i^x \sigma_j^x +\sum_i \Delta \sigma_i^z
 as realized for instance in experiments with trapped ions.
 
 
-Using the standard DMRG approach (without Quantum numbers), the ground state search thus becomes  more and more challenging as  $\Delta\to0$ because the energy gap vanishes.
-In particular, it becomes extremely challenging to calculate accurately the entropy of the ground state entropy, a small admixture of the first excited state in the estimated ground state leading to significant errors in the entropy.
+Using the standard DMRG approach (without Quantum numbers), the ground state search becomes more and more challenging as  $\Delta\to0$ because the energy gap vanishes.
+In particular, it becomes extremely hard to calculate accurately the entropy of the ground state, a small admixture of the first excited state leading to significant errors in the estimated entropy.
 
 This problem can be cured using the fact that the Hamiltonian conserves the parity of the number of excitations and that ground and first excited states have opposite parity. 
 (For two particles, these state correspond respectively to $\ket{\uparrow}\ket{\uparrow}-\ket{\downarrow}\ket{\downarrow}$, $\ket{\uparrow}\ket{\downarrow}-\ket{\downarrow}\ket{\uparrow}$).
-Using a MPS ansatz with Quantum numbers associated to the parity conservation, the DMRG search will be thus in this case unaffected by the gap closing at $\Delta\to 0$.
+Using a MPS ansatz with Quantum numbers associated to the parity conservation, the DMRG search will be in this case unaffected by the gap closing at $\Delta\to 0$.
 
 ##Implementation of the site set
 To implement parity conservation with ITensor, we create a new spin set spinhalfparity.h, which is based on spinhalf.h with the crucial differences that the indices describe the number of excitations modulo 2, i.e the parity. This file has to be placed in the folder itensor/mps/sites.
@@ -32,7 +32,7 @@ To implement parity conservation with ITensor, we create a new spin set spinhalf
             }
       }
 
-Given that the SxSx operator conserves the parity, we cam also comment the line  "Op = mixedIQTensor(s,sP);" of the original spinhalf.h class.
+Given that the SxSx operator conserves the parity, we also comment the line  "Op = mixedIQTensor(s,sP);" of the original spinhalf.h class.
 
 
     if(opname == "Sx")
@@ -93,7 +93,7 @@ We finally use the dmrg algorithm to compare the efficiency of the parity non-co
         auto enP1 = dmrg(phi1,HQ,sweeps,{"Quiet=",true});
 
      
- The gap and the fidelities as a function of the detuning $\Delta$  and for $N=40$ sites are represented in the Figure below showing the advantage of the Quantum number approach.
+The gap and the fidelities as a function of the detuning $\Delta$  and for $N=40$ sites are represented in the Figure below showing the advantage of the Quantum number approach.
 
 <img src="gap.png" alt="Diagram" style="width:50x;"/>
 <img src="entropy.png" alt="Diagram" style="width:50px;"/>
