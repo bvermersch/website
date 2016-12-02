@@ -99,7 +99,7 @@ The gap and the fidelities as a function of the detuning $\Delta$  and for $N=40
 <img src="entropyGS.png" alt="Diagram" style="width:50px;"/>
 
  
-<a href="parityQN.zip">Download the code and the python scripts used to create and plot the data</a>
+<a href="parity_QN.zip">Download the code and the python scripts used to create and plot the data</a>
 
 
 
