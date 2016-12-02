@@ -7,13 +7,13 @@ We are interested in the ground state properties of the long-range Ising model
 \begin{equation}
 H = \sum_{i<j} \frac{J}{(j-i)^3} \sigma_i^x \sigma_j^x +\sum_i \Delta \sigma_i^z, 
 \end{equation}
-as realized for instance in experiments with trapped ions.
+as realized for instance in experiments with trapped ions [C. Senko and al, Science 25 430-434, Jurcevic, P. and al Phys. Rev. Lett. 115, 100501].
 
 
 Using the standard DMRG approach (without Quantum numbers), the ground state search becomes more and more challenging as  $\Delta\to0$ because the energy gap vanishes.
 In particular, it becomes extremely hard to calculate accurately the entropy of the ground state, a small admixture of the first excited state leading to significant errors in the estimated entropy.
 
-This problem can be cured using the fact that the Hamiltonian conserves the parity of the number of excitations and that ground and first excited states have opposite parity. 
+This problem can be cured using the fact that the Hamiltonian conserves the parity of the number of excitations, ground and first excited states having opposite parity. 
 (For two particles, these state correspond respectively to $\ket{\uparrow}\ket{\uparrow}-\ket{\downarrow}\ket{\downarrow}$, $\ket{\uparrow}\ket{\downarrow}-\ket{\downarrow}\ket{\uparrow}$).
 Using a MPS ansatz with Quantum numbers associated to the parity conservation, the DMRG search will be unaffected by the gap closing at $\Delta\to 0$.
 
