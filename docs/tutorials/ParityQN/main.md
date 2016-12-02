@@ -11,7 +11,7 @@ as realized for instance in experiments with trapped ions [C. Senko and al, Scie
 
 
 Using the standard DMRG approach (without Quantum numbers), the ground state search becomes more and more challenging as  $\Delta\to0$ because the energy gap vanishes.
-In particular, it becomes extremely hard to calculate accurately the entropy of the ground state, a small admixture of the first excited state leading to significant errors in the estimated entropy.
+In particular, it becomes extremely hard to calculate accurately the entropy of the ground state, a small admixture of the first excited state leading to significant errors in the estimation of the entropy.
 
 This problem can be cured using the fact that the Hamiltonian conserves the parity of the number of excitations, ground and first excited states having opposite parity. 
 (For two particles, these state correspond respectively to $\ket{\uparrow}\ket{\uparrow}-\ket{\downarrow}\ket{\downarrow}$, $\ket{\uparrow}\ket{\downarrow}-\ket{\downarrow}\ket{\uparrow}$).
