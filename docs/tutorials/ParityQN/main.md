@@ -96,7 +96,7 @@ We finally use the dmrg algorithm to compare the efficiency of the parity non-co
 The gap and the fidelities as a function of the detuning $\Delta$  and for $N=40$ sites are represented in the Figure below showing the advantage of the Quantum number approach.
 
 <img src="gap.png" alt="Diagram" style="width:50x;"/>
-<img src="entropy.png" alt="Diagram" style="width:50px;"/>
+<img src="entropyGS.png" alt="Diagram" style="width:50px;"/>
 
  
 <a href="parityQN.zip">Download the code and the python scripts used to create and plot the data</a>
