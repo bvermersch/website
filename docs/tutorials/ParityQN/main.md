@@ -15,7 +15,7 @@ In particular, it becomes extremely hard to calculate accurately the entropy of 
 
 This problem can be cured using the fact that the Hamiltonian conserves the parity of the number of excitations and that ground and first excited states have opposite parity. 
 (For two particles, these state correspond respectively to $\ket{\uparrow}\ket{\uparrow}-\ket{\downarrow}\ket{\downarrow}$, $\ket{\uparrow}\ket{\downarrow}-\ket{\downarrow}\ket{\uparrow}$).
-Using a MPS ansatz with Quantum numbers associated to the parity conservation, the DMRG search will be in this case unaffected by the gap closing at $\Delta\to 0$.
+Using a MPS ansatz with Quantum numbers associated to the parity conservation, the DMRG search will be unaffected by the gap closing at $\Delta\to 0$.
 
 ##Implementation of the site set
 To implement parity conservation with ITensor, we create a new spin set spinhalfparity.h, which is based on spinhalf.h with the crucial differences that the indices describe the number of excitations modulo 2, i.e the parity. This file has to be placed in the folder itensor/mps/sites.
@@ -99,7 +99,7 @@ The gap and the fidelities as a function of the detuning $\Delta$  and for $N=40
 <img src="entropy.png" alt="Diagram" style="width:50px;"/>
 
  
-<a href="parityQN.zip">Download the full codes and the python scripts used to create and plot the data</a>
+<a href="parityQN.zip">Download the code and the python scripts used to create and plot the data</a>
 
 
 
